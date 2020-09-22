@@ -1,5 +1,5 @@
-import XCTest
 @testable import SwiftEnhancer
+import XCTest
 
 final class StringTests: XCTestCase {
     func testNilOrEmpty() {
