@@ -1,0 +1,17 @@
+name: lint
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Prepare Build
+        run: brew bundle
+      - name: Check Code Quality
+        run: swiftformat --lint . && swiftlint
