@@ -1,8 +1,7 @@
-import XCTest
 @testable import SwiftEnhancer
+import XCTest
 
 final class IntTests: XCTestCase {
-
     func testIntFromStringDefaultValue() {
         let int1 = Int("1", default: 100)
         let int2 = Int("", default: 100)
