@@ -33,7 +33,7 @@ final class StringTests: XCTestCase {
 
     func testHexStringToByteArray() {
         let hexString = "ABCDEF01"
-        XCTAssertEqual(hexString.hexStringToByteArray, [0xab, 0xcd, 0xef, 0x01])
+        XCTAssertEqual(hexString.hexStringToByteArray, [0xAB, 0xCD, 0xEF, 0x01])
 
         let invalidHexString = "ABC"
         XCTAssertNil(invalidHexString.hexStringToByteArray)
