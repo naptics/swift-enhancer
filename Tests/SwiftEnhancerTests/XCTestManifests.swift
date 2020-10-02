@@ -24,7 +24,13 @@ extension StringTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__StringTests = [
+        ("testFromBase64String", testFromBase64String),
+        ("testHexStringToByteArray", testHexStringToByteArray),
+        ("testIsValidHexNumber", testIsValidHexNumber),
         ("testNilOrEmpty", testNilOrEmpty),
+        ("testToBase64String", testToBase64String),
+        ("testToISO8601Date", testToISO8601Date),
+        ("testTruncated", testTruncated),
     ]
 }
 
