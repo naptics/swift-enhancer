@@ -30,4 +30,34 @@ final class StringTests: XCTestCase {
         let text = "Hello World"
         XCTAssertEqual(text.toBase64(), "SGVsbG8gV29ybGQ=")
     }
+
+    func testHexStringToByteArray() {
+        let hexString = "ABCDEF01"
+        XCTAssertEqual(hexString.hexStringToByteArray, [0xab, 0xcd, 0xef, 0x01])
+
+        let invalidHexString = "ABC"
+        XCTAssertNil(invalidHexString.hexStringToByteArray)
+
+        let invalidHexCharacter = "ABCX"
+        XCTAssertNil(invalidHexCharacter.hexStringToByteArray)
+    }
+
+    func testTruncated() {
+        XCTAssertEqual("Hello World".truncated(after: 7, at: .trailing, with: "..."), "Hello W...")
+        XCTAssertEqual("Hello World".truncated(after: 7, at: .leading, with: "..."), "...o World")
+        XCTAssertEqual("Hello World".truncated(after: 7, at: .center, with: "..."), "He...ld")
+        XCTAssertEqual("Hello".truncated(after: 7, at: .center, with: "..."), "Hello")
+    }
+
+    func testIsValidHexNumber() {
+        XCTAssertTrue("ABCDEF01".isValidHexNumber)
+        XCTAssertFalse("XY".isValidHexNumber)
+        XCTAssertFalse("ABCDXY".isValidHexNumber)
+        XCTAssertFalse("XYABCD".isValidHexNumber)
+    }
+
+    func testToISO8601Date() {
+        XCTAssertNotNil("2020-10-03T15:57:43-02:00".toISO8601Date())
+        XCTAssertNotNil("2020-10-03T15:57:43Z".toISO8601Date())
+    }
 }

@@ -1,1 +1,3 @@
 --exclude Tests/SwiftEnhancerTests/XCTestManifests.swift
+
+--disable wrapMultilineStatementBraces
