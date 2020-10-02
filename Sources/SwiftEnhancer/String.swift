@@ -10,7 +10,7 @@ extension String {
 
      - returns: Decoded string, or `nil` if decoding failed.
      */
-    func fromBase64() -> String? {
+    public func fromBase64() -> String? {
         guard let data = Data(base64Encoded: addBase64Padding()) else {
             return nil
         }
@@ -22,7 +22,7 @@ extension String {
 
      - returns: The encoded string.
      */
-    func toBase64() -> String {
+    public func toBase64() -> String {
         Data(utf8).base64EncodedString()
     }
 
@@ -56,7 +56,7 @@ extension String {
     // MARK: Date
 
     @available(OSX 10.12, *)
-    internal func toISO8601Date() -> Date? {
+    public func toISO8601Date() -> Date? {
         let dateFormatter = ISO8601DateFormatter()
         return dateFormatter.date(from: self)
     }
