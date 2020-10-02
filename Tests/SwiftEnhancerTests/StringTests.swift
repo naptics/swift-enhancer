@@ -56,6 +56,7 @@ final class StringTests: XCTestCase {
         XCTAssertFalse("XYABCD".isValidHexNumber)
     }
 
+    @available(OSX 10.12, *)
     func testToISO8601Date() {
         XCTAssertNotNil("2020-10-03T15:57:43-02:00".toISO8601Date())
         XCTAssertNotNil("2020-10-03T15:57:43Z".toISO8601Date())
