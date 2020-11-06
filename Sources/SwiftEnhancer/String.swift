@@ -55,7 +55,7 @@ extension String {
 
     // MARK: Date
 
-    @available(OSX 10.12, *)
+    @available(OSX 10.12, iOS 10.0, *)
     public func toISO8601Date() -> Date? {
         let dateFormatter = ISO8601DateFormatter()
         return dateFormatter.date(from: self)
