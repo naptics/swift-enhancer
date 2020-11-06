@@ -1,6 +1,6 @@
 import Foundation
 
-extension String {
+public extension String {
     // MARK: Base64
 
     /**
@@ -10,7 +10,7 @@ extension String {
 
      - returns: Decoded string, or `nil` if decoding failed.
      */
-    public func fromBase64() -> String? {
+    func fromBase64() -> String? {
         guard let data = Data(base64Encoded: addBase64Padding()) else {
             return nil
         }
@@ -22,13 +22,13 @@ extension String {
 
      - returns: The encoded string.
      */
-    public func toBase64() -> String {
+    func toBase64() -> String {
         Data(utf8).base64EncodedString()
     }
 
     // MARK: Hex
 
-    public var hexStringToByteArray: [UInt8]? {
+    var hexStringToByteArray: [UInt8]? {
         let length = count
         if length & 1 != 0 {
             return nil
@@ -48,22 +48,22 @@ extension String {
         return bytes
     }
 
-    public var isValidHexNumber: Bool {
+    var isValidHexNumber: Bool {
         let chars = CharacterSet(charactersIn: "0123456789ABCDEF").inverted
         return uppercased().rangeOfCharacter(from: chars) == nil
     }
 
     // MARK: Date
 
-    @available(OSX 10.12, *)
-    public func toISO8601Date() -> Date? {
+    @available(OSX 10.12, iOS 10.0, *)
+    func toISO8601Date() -> Date? {
         let dateFormatter = ISO8601DateFormatter()
         return dateFormatter.date(from: self)
     }
 
     // MARK: Text manipulation
 
-    public enum TruncationPosition {
+    enum TruncationPosition {
         case leading
         case center
         case trailing
@@ -77,9 +77,9 @@ extension String {
         - position: The position of the truncated character(s). Default `TruncationPosition.trailing`.
         - characters: The characters to be set as the truncation characters.
      */
-    public func truncated(after limit: Int,
-                          at position: TruncationPosition = .trailing,
-                          with characters: String = "...") -> String {
+    func truncated(after limit: Int,
+                   at position: TruncationPosition = .trailing,
+                   with characters: String = "...") -> String {
         guard count > limit else {
             return self
         }
