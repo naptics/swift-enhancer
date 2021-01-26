@@ -101,7 +101,7 @@ public extension String {
     /**
      Adds base64 padding to the string.
      */
-    fileprivate func addBase64Padding() -> String {
+    private func addBase64Padding() -> String {
         let remainder = count % 4
         if remainder > 0 {
             return padding(toLength: count + 4 - remainder, withPad: "=", startingAt: 0)
