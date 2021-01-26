@@ -4,7 +4,7 @@ extension Array where Element: Hashable {
 
      - parameter otherArray: The other array, which duplicated elements must be subtracted.
      */
-    func subtracting(_ otherArray: Array<Element>) -> Array<Element> {
+    func subtracting(_ otherArray: [Element]) -> [Element] {
         Array(Set(self).subtracting(otherArray))
     }
 }
