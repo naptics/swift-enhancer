@@ -96,6 +96,13 @@ public extension String {
         }
     }
 
+    // MARK: String checks
+
+    /// A Boolean value indicating whether the collection is empty after removing whitespaces.
+    var isBlank: Bool {
+        trimmingCharacters(in: .whitespaces).isEmpty
+    }
+
     // MARK: - private Helper Functions
 
     /**

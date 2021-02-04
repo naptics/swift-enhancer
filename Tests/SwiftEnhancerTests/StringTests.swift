@@ -61,4 +61,24 @@ final class StringTests: XCTestCase {
         XCTAssertNotNil("2020-10-03T15:57:43-02:00".toISO8601Date())
         XCTAssertNotNil("2020-10-03T15:57:43Z".toISO8601Date())
     }
+
+    func testIsBlank() {
+        XCTAssertTrue("".isBlank)
+        XCTAssertTrue(" ".isBlank)
+        XCTAssertFalse("A".isBlank)
+        XCTAssertFalse(" A ".isBlank)
+    }
+
+    func testIsNilOrBlank() {
+        var nilString: String?
+        XCTAssertTrue(nilString.isNilOrBlank)
+        nilString = ""
+        XCTAssertTrue(nilString.isNilOrBlank)
+        nilString = " "
+        XCTAssertTrue(nilString.isNilOrBlank)
+        nilString = "A"
+        XCTAssertFalse(nilString.isNilOrBlank)
+        nilString = " A "
+        XCTAssertFalse(nilString.isNilOrBlank)
+    }
 }
