@@ -70,7 +70,7 @@ final class StringTests: XCTestCase {
     }
 
     func testIsNilOrBlank() {
-        var nilString: String? = nil
+        var nilString: String?
         XCTAssertTrue(nilString.isNilOrBlank)
         nilString = ""
         XCTAssertTrue(nilString.isNilOrBlank)

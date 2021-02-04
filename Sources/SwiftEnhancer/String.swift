@@ -100,7 +100,7 @@ public extension String {
 
     /// A Boolean value indicating whether the collection is empty after removing whitespaces.
     var isBlank: Bool {
-        self.trimmingCharacters(in: .whitespaces).isEmpty
+        trimmingCharacters(in: .whitespaces).isEmpty
     }
 
     // MARK: - private Helper Functions
