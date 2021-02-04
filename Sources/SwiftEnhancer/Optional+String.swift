@@ -5,4 +5,9 @@ public extension Optional where Wrapped == String {
     var isNilOrEmpty: Bool {
         (self ?? "").isEmpty
     }
+
+    /// A Boolean value indicating whether the collection is empty after removing whitespaces or `nil`.
+    var isNilOrBlank: Bool {
+        (self ?? "").isBlank
+    }
 }
