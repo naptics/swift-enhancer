@@ -1,4 +1,4 @@
-extension Collection {
+public extension Collection {
     /**
      Returns the object at the given index, if it exists.
 
