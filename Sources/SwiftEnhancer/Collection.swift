@@ -1,4 +1,4 @@
-extension Collection {
+public extension Collection {
     /**
      Returns the object at the given index, if it exists.
 
@@ -7,7 +7,7 @@ extension Collection {
      - parameters:
        - index: The index of the element.
      */
-    public subscript(safe index: Index) -> Iterator.Element? {
+    subscript(safe index: Index) -> Iterator.Element? {
         indices.contains(index) ? self[index] : nil
     }
 }
