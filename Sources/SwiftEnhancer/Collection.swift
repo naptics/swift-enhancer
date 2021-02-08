@@ -7,7 +7,7 @@ extension Collection {
      - parameters:
        - index: The index of the element.
      */
-    subscript(safe index: Index) -> Iterator.Element? {
+    public subscript(safe index: Index) -> Iterator.Element? {
         indices.contains(index) ? self[index] : nil
     }
 }
